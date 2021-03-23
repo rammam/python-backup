@@ -34,11 +34,9 @@ else:
     
     dst_archive = name + ".tar.gz"
 
-#Remplacer "x:gz" par "x:bz2" pour utiliser bzip2
+#Remplacer "z" par "j" pour utiliser bzip2
 
-tar = tarfile.open(dst_archive,"x:gz")
-for file in glob.glob(src_dir+"/**",recursive=True):
-    tar.add(file, recursive=False)
+subprocess.run(["tar", "-czvf", dst_archive, "-C", src_dir, "."])
        
 # Déplacement de l'archive tar vers le dossier de destination
 
