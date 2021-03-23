@@ -16,16 +16,14 @@ git clone https://github.com/rammam/python-backup/
 
 ## Utilisation
 
-### Script principal
+### Mode interactif
 
-#### Exécution :
+#### Effectuer un backup :
 
 ```sh
 sudo python3 backup.py
 ```
 Tous les paramètres seront demandés pendant l'exécution, on spécifie les dossiers avec un chemin absolu ou relatif.
-
-##### Pour effectuer un backup :
 
 ```sh
 Faire un backup? (Y/N) : Y
@@ -42,7 +40,7 @@ Nom de l'archive : archive
 (Il n'y a pas besoin de préciser l'extension du fichier)
 
 
-##### Pour restaurer un backup :
+#### Restaurer un backup :
 
 ```sh
 Faire un backup? (Y/N) : N
@@ -61,12 +59,12 @@ Archive du backup : /archive/du/backup.tar.gz
 Dossier de destination : /dossier/de/destination
 ```
 
-### Script automatique :
+### Mode automatique :
 
 #### Exécution :
 
 ```sh
-sudo python3 backup-auto.py <dossier/à/sauvegarder> <dossier/de/destination> [--name NomPersonnalisé]
+sudo python3 backup.py -a -d <dossier/à/sauvegarder> -s <dossier/de/destination> [--name NomPersonnalisé]
 ```
 Le paramètre --name est optionnel.
 
@@ -78,6 +76,8 @@ backup_YYYY-MM-DD_HH-MM-SS.tar.gz
 
 ## Versions
 
+* 0.2.0
+    * backup.py regroupe le mode interactif et automatique
 * 0.1.0
     * Première release
 
